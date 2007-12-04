@@ -1,6 +1,6 @@
 %define name	gtk-iptables
 %define version	0.4.21
-%define release 3mdk
+%define release  %mkrel 3
 
 Name: 	 	%{name}
 Summary: 	GTK-based frontend for iptables
