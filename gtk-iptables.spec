@@ -11,7 +11,6 @@ Source:		%{name}-%{version}.tar.bz2
 URL:		http://gtk-iptables.sourceforge.net
 License:	GPL
 Group:		System/Configuration/Networking
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	gtk-devel automake1.8
 Requires:	gksu userspace-ipfilter
 Obsoletes:	gtkiptables
