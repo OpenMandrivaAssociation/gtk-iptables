@@ -36,9 +36,15 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall
 
 #menu
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}): command="gksu gtkiptables" icon="networking_configuration_section.png" needs="x11" title="GTK-IPTables" longtitle="IPTables Rules Configuration" section="Configuration/Networking"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=gksu gtkiptables
+Icon=networking_configuration_section
+Name=GTK-IPTables
+Comment=IPTables Rules Configuration
+Categories=Network;
 EOF
 
 %find_lang %name
@@ -56,5 +62,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc README COPYING NEWS
 %{_bindir}/gtkiptables
-%{_menudir}/%name
+%{_datadir}/applications/mandriva-%name.desktop
 
