@@ -1,6 +1,6 @@
 %define name	gtk-iptables
-%define version	0.4.21
-%define release  %mkrel 3
+%define version	0.5.1
+%define release  %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	GTK-based frontend for iptables
@@ -24,16 +24,12 @@ create rules for all chains for Filter, NAT, and Mangle tables.
 %setup -q
 
 %build
-export FORCE_AUTOCONF_2_5=1
-aclocal-1.8
-automake-1.8 -a -c --foreign
-autoconf
-%configure
+%configure2_5x
 %make
-										
+
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall
+%makeinstall_std
 
 #menu
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
@@ -54,13 +50,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %update_menus
-		
+
 %postun
 %clean_menus
 
 %files -f %{name}.lang
 %defattr(-,root,root)
-%doc README COPYING NEWS
+%doc README COPYING
 %{_bindir}/gtkiptables
 %{_datadir}/applications/mandriva-%name.desktop
-
+%{_datadir}/pixmaps/*
