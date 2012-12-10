@@ -1,0 +1,10 @@
+--- gtk-iptables-0.5.1/gtkipt_utils.c.printf	2006-12-19 06:20:37.000000000 +0300
++++ gtk-iptables-0.5.1/gtkipt_utils.c	2012-11-05 15:37:51.850878993 +0400
+@@ -65,6 +65,7 @@ int message_box(GtkWindow *parent, const
+ 				   GTK_DIALOG_DESTROY_WITH_PARENT,
+ 				   type,
+ 				   buttons,
++                                   "%s",
+ 				   p_msg);
+ 
+   n_ret_val = (int)gtk_dialog_run (GTK_DIALOG (dialog));
