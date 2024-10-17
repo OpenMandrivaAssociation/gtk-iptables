@@ -10,7 +10,7 @@ Release: 	%{release}
 Source0:		%{name}-%{version}.tar.bz2
 source1:		.abf.yml
 patch0:			gtk-iptables-0.5.1.printf.patch
-URL:		http://gtk-iptables.sourceforge.net
+URL:		https://gtk-iptables.sourceforge.net
 License:	GPL
 Group:		System/Configuration/Networking
 BuildRequires:	pkgconfig(gtk+-2.0)
