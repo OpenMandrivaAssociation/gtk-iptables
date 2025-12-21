@@ -13,6 +13,11 @@ patch0:			gtk-iptables-0.5.1.printf.patch
 URL:		https://gtk-iptables.sourceforge.net
 License:	GPL
 Group:		System/Configuration/Networking
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(gtk+-2.0)
 Requires:	gksu userspace-ipfilter
 Obsoletes:	gtkiptables
